@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { useState } from 'react'
+import './asset/CSS/App.css'
+import Aceuille from './pages/Aceuille'
+import Dossiers from './pages/Dossiers'
+import Corbeille from "./pages/Corbeille";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [isOpen, setIsOpen] = useState(false)
+
+    const toggleMenu = () => setIsOpen(!isOpen)
+    const closeMenu = () => setIsOpen(false)
+
+    return (
+        <BrowserRouter>
+            <div className="App">
+                <nav>
+                    <button className={`burger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                        <span/><span/><span/>
+                    </button>
+                </nav>
+
+                <div className={`menu-overlay ${isOpen ? 'open' : ''}`}>
+                    <ul>
+                        <li><Link to="/" onClick={closeMenu}>Accueil</Link></li>
+                        <li><Link to="/dossiers" onClick={closeMenu}>Dossiers</Link></li>
+                        <li><Link to="/corbeille" onClick={closeMenu}>Corbeille</Link></li>
+                    </ul>
+                </div>
+
+                <Routes>
+                    <Route path="/" element={<Aceuille />} />
+                    <Route path="/dossiers" element={<Dossiers />} />
+                    <Route path="/corbeille" element={<Corbeille />} />
+                </Routes>
+
+            </div>
+        </BrowserRouter>
+    )
 }
 
-export default App;
+export default App
