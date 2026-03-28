@@ -1,0 +1,98 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #eef0fb;
+    color: #2d2d4e;
+}
+
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.App-header {
+    background: linear-gradient(135deg, #d4d0f5 0%, #c5cef7 100%);
+    padding: 5rem 2rem 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid #c0bced;
+}
+
+.title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #4a3fbf;
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+}
+
+.info-tache {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 0.95rem;
+    color: #5a5490;
+}
+
+.info-tache p {
+    background: rgba(255,255,255,0.5);
+    padding: 0.45rem 1.1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.7);
+}
+
+.etat-badge {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    width: fit-content;
+    margin-top: 6px;
+    background: #c1bee1;
+    color: #3a3470;
+}
+
+.footer-conteneur {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #d4d0f5 0%, #c5cef7 100%);
+    border-top: 1px solid #c0bced;
+}
+
+.footer-conteneur a {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.6);
+    color: #4a3fbf;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.6rem 1.4rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.8);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.footer-conteneur a:hover {
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(100,90,200,0.15);
+}
+
+.backdrop {
+    position: fixed; inset: 0;
+    background: rgba(45,45,78,0.4);
+    backdrop-filter: blur(4px);
+    z-index: 500;
+    display: flex; align-items: center; justify-content: center;
+}
+
+@media (max-width: 640px) {
+    .info-tache { flex-direction: column; gap: 0.5rem; align-items: center; }
+}

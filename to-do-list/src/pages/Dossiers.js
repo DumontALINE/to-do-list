@@ -1,16 +1,18 @@
 import { useState } from 'react';
-import data from '../data.json';
+import data from '../donnee/data.json';
 import '../asset/CSS/App.css';
+import '../asset/CSS/global.css';
+import '../asset/CSS/Dossier.css';
 
-function Dossiers() {
+function Dossiers({setTaskSelectionne }) {
 
     const [relations] = useState(() => {
-        const s = localStorage.getItem('relations')  // ← 'relations'
+        const s = localStorage.getItem('relations')
         return s ? JSON.parse(s) : data.relations
     });
 
     const [tasks] = useState(() => {
-        const s = localStorage.getItem('tasks')      // ← 'tasks'
+        const s = localStorage.getItem('tasks')
         return s ? JSON.parse(s) : data.tasks
     });
 
@@ -63,13 +65,13 @@ function Dossiers() {
                                         <p className="folder-empty">Aucune tâche</p>
                                     ) : (
                                         taches.map(task => (
-                                            <div key={task.id} className="folder-task-item">
+                                            <button key={task.id} className="folder-task-item" onClick={() => setTaskSelectionne(task)}>
                                                 <div>
                                                     <p className="folder-task-title">{task.title}</p>
                                                     <p className="folder-desc">{task.date_echeance}</p>
                                                 </div>
                                                 <span className="etat-badge">{task.etat}</span>
-                                            </div>
+                                            </button>
                                         ))
                                     )}
                                 </div>

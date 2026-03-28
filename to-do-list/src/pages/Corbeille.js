@@ -1,17 +1,12 @@
 import monIcone from "../asset/image/modifier.png";
 import { useState } from "react";
-import data from "../data.json";
-import { ETATS } from "../Etat";
+import data from "../donnee/data.json";
+import { ETATS } from "../donnee/Etat";
 import "../asset/CSS/App.css";
+import '../asset/CSS/global.css';
+import '../asset/CSS/Corbeille.css';
 
-function Corbeille() {
-    const [tasks, setTasks] = useState(() => {
-        const sauvegarde = localStorage.getItem('tasks')
-        return sauvegarde ? JSON.parse(sauvegarde) : data.tasks
-    })
-
-    const [taskSelectionne, setTaskSelectionne] = useState(null); // ← manquait
-
+function Corbeille({ tasks, setTasks, setTaskSelectionne  }) {
     const [filtreStatuts, setFiltreStatuts] = useState([ETATS.REUSSI, ETATS.ABANDONNE]);
 
     const toggleTask = (id) => {

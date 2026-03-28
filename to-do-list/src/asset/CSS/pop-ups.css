@@ -1,0 +1,94 @@
+.popup {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%; max-width: 460px;
+    display: flex; flex-direction: column; gap: 0.8rem;
+    box-shadow: 0 8px 40px rgba(100,90,200,0.2);
+    max-height: 90vh; overflow-y: auto;
+}
+
+.popup-reset {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    box-shadow: 0 8px 40px rgba(100,90,200,0.2);
+    text-align: center;
+}
+
+.popup-reset h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #4a3fbf;
+}
+
+.popup-reset-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.popup-header {
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.popup-header h2 {
+    font-size: 1.4rem; font-weight: 800; color: #4a3fbf;
+}
+
+.btn-close {
+    background: none; border: none;
+    font-size: 1.1rem; color: #7070a0;
+    cursor: pointer; padding: 0.2rem 0.5rem;
+    border-radius: 6px; transition: background 0.2s;
+}
+
+.btn-close:hover { background: #f0eeff; }
+
+.popup label {
+    font-size: 0.85rem; font-weight: 600; color: #3a3470;
+}
+
+.popup label span { color: #b06090; margin-left: 2px; }
+
+.popup input, .popup textarea, .popup select {
+    width: 100%; padding: 0.7rem 1rem;
+    border: 1.5px solid #d4d0f5; border-radius: 10px;
+    font-size: 0.95rem; color: #2d2d4e;
+    background: #f7f5ff; outline: none;
+    transition: border 0.2s; font-family: inherit;
+}
+
+.popup input:focus, .popup textarea:focus, .popup select:focus {
+    border-color: #7b6fcd;
+}
+
+.popup textarea { resize: vertical; min-height: 90px; }
+
+.popup-buttons {
+    display: flex; justify-content: flex-end;
+    gap: 0.8rem; margin-top: 0.4rem;
+}
+
+.btn-annuler {
+    padding: 0.6rem 1.2rem; border-radius: 10px;
+    border: 1.5px solid #d4d0f5; background: #fff;
+    color: #7070a0; font-weight: 600; cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-annuler:hover { background: #f0eeff; }
+
+.btn-confirmer {
+    padding: 0.6rem 1.4rem; border-radius: 10px; border: none;
+    background: linear-gradient(135deg, #7b6fcd, #5a4fcf);
+    color: #fff; font-weight: 600; cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-confirmer:hover { opacity: 0.9; transform: translateY(-1px); }
